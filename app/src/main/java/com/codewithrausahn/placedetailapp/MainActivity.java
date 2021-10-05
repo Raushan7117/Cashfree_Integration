@@ -49,17 +49,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 HashMap<String, String> params = new HashMap<>();
-                params.put(CFPaymentService.PARAM_APP_ID, "100045e72e2811d684fe47b2af540001");
+                params.put(CFPaymentService.PARAM_APP_ID, getResources().getString(R.string.app_id));
                 params.put(CFPaymentService.PARAM_ORDER_ID, "1204");
                 params.put(CFPaymentService.PARAM_ORDER_AMOUNT, "1399");
                 params.put(CFPaymentService.PARAM_ORDER_NOTE, "Order for Product");
-                params.put(CFPaymentService.PARAM_CUSTOMER_NAME, "Raushan Kumar");
-                params.put(CFPaymentService.PARAM_CUSTOMER_PHONE, "8340447787");
-                params.put(CFPaymentService.PARAM_CUSTOMER_EMAIL, "raushan7117@gmail.com");
+                params.put(CFPaymentService.PARAM_CUSTOMER_NAME, getResources().getString(R.string.NAME));
+                params.put(CFPaymentService.PARAM_CUSTOMER_PHONE, getResources().getString(R.string.phone));
+                params.put(CFPaymentService.PARAM_CUSTOMER_EMAIL, getResources().getString(R.string.email));
                 params.put(CFPaymentService.PARAM_ORDER_CURRENCY, "INR");
                 params.put(CFPaymentService.PARAM_NOTIFY_URL, "https://your.backend.webhook");
 
-                String token = "C69JCN4MzUIJiOicGbhJCLiQ1VKJiOiAXe0Jye.9KQfikDNmRWNykDM1kTNxYjI6ICdsF2cfJCLygjM1MDO1MjNxojIwhXZiwiIS5USiojI5NmblJnc1NkclRmcvJCL5kzMxojI05Wdv1WQyVGZy9mIsICNwITMiojIklkclRmcvJye.Huu-YzuUcYHLBV-6rZRte1ncB99PX2bweJ_rfCQ_V4B_i88ooHHLBjA1hmYtS1KyYO";
+                String token = getResources().getString(R.string.token);
                 CFPaymentService.getCFPaymentServiceInstance().doPayment(MainActivity.this, params, token, "TEST");
             }
         });
